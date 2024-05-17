@@ -19,8 +19,33 @@ footer{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-direction: column;
+        
+        @media screen and (min-width: $breakpoint-lg) {
+            flex-direction: row;
+        }
     }
-    
+
+    .social-networks{
+        @include col-span-12;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 1.25rem;
+        margin: 2.5rem 0;
+        
+        @media screen and (min-width: $breakpoint-lg) {
+            @include col-span-1;
+        }
+
+        img{
+            width: 2.5rem;
+            height: 2.5rem;
+            object-fit: cover;
+        }
+    }
+
     .wpp-float{
         width: 2.5rem;
         height: 2.5rem;
