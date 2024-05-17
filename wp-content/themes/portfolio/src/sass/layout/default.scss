@@ -358,7 +358,7 @@ img {
 }
 
 .button-default {
-  background-color: $gray-light;
+  background-color: $white;
   color: $gray-ultradark;
 
   &:hover {
@@ -380,4 +380,16 @@ img {
     @include heading-title-lg;
     color: $blue-dark;
   }
+}
+
+.bg-blue-hard-light {
+  background-color: $blue-ultradark;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  z-index: 10;
 }

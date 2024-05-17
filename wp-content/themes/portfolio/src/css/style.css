@@ -434,7 +434,7 @@ img {
 }
 
 .button-default {
-  background-color: #CCD0CF;
+  background-color: #fff;
   color: #253745;
 }
 .button-default:hover {
@@ -463,6 +463,18 @@ img {
   .post-not-found .entry-title {
     font-size: 1.25rem;
   }
+}
+
+.bg-blue-hard-light {
+  background-color: #06141B;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  z-index: 10;
 }
 
 .header-menu-itens {
@@ -773,12 +785,21 @@ footer .scroll-to-top-btn {
   justify-content: center;
 }
 
-.our-services {
-  padding: 5rem 0;
+.banners .default-heading-title h1, .banners .default-heading-title h2 {
+  text-transform: uppercase;
+}
+.banners .default-heading-title h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-top: 0.625rem;
 }
 @media screen and (min-width: 1024px) {
-  .our-services {
-    padding: 8.75rem 0;
+  .banners .default-heading-title h1 {
+    font-size: 3.4375rem;
+    text-indent: -1px;
   }
 }
 
