@@ -4,7 +4,7 @@
     ********************************/
 
         /*******************************
-        Disabling Guttenber Editor
+        Disabling Guttenberg Editor
         ********************************/
 
         add_filter('use_block_editor_for_post_type','disable_guttemberg_editor');
@@ -18,7 +18,7 @@
 
         add_action('admin_menu', 'linked_url');
         function linked_url() {
-            add_menu_page('linked_url','Informações Gerais','read','post.php?post=8&action=edit','', 'dashicons-admin-generic',  90);
+            add_menu_page('linked_url','Informações Gerais','read','post.php?post=8&action=edit','', 'dashicons-admin-generic',  130);
         }
 
         /*******************************
@@ -29,7 +29,7 @@
         function exclude_pages_from_admin($query){
             global $pagenow,$post_type;
             if(is_admin() && $pagenow == 'edit.php' && $post_type == 'page') {
-                $settings_page = get_page_by_path('informacoes', NULL,'page')->ID;
+                $settings_page = get_page_by_path('informacoes-gerais', NULL,'page')->ID;
                 $query->query_vars['post__not_in'] = array($settings_page);
             }
         }
