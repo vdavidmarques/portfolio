@@ -1,99 +1,18 @@
 @import '../helpers/variables.scss';
 @import '../helpers/mixins.scss';
 
-.social-icon img {
-  object-fit: cover;
-  background-repeat: no-repeat;
-  fill: $white;
-  width: 1.75rem; /* 28px */
-  height: 1.75rem; /* 28px */
-  @media screen and (min-width: $breakpoint-lg) {
-    width: 2rem; /* 32px */
-    height: 2rem; /* 32px */
-  }
-}
-
-.social-icon.menu img {
-  width: 2.5rem;
-  height: 1.25rem;
-  object-fit: contain;
-}
-
-.header-top{
-    background-color: $blue;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 30;
-
-    @media screen and (min-width: $breakpoint-lg) {
-        position: static;
-    }
-
-    .socials-and-menu {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        margin-left: -3.125rem;
-
-        @media screen and (min-width: $breakpoint-lg) {
-            margin-left: 0;
-        }
-        
-        .socials-icons{
-            position: relative;
-            column-gap: 2rem;
-            justify-content: center;
-            align-items: center;
-            padding: 0.75rem 0;
-            display: flex;
-
-            @media screen and (min-width: $breakpoint-lg) {
-                flex-direction: row;
-                column-gap: 4rem;
-                min-height: 3rem;
-            }
-
-            img{
-                width: 2.1875rem;
-                height: auto;
-                object-fit: cover;
-
-                @media screen and (min-width: $breakpoint-lg) {
-                    width: 2.1875rem;
-                    height: 2.1875rem;
-                }
-            }
-        }
-        .open-menu-mobile{
-            
-            .bg-menu-mobile{         
-                position: absolute;
-                top: 0;
-                right: 1rem;
-                background: url("../../library/icons/menu-icon.svg");
-                transform: translateY(1.5rem);
-                width: 2.0625rem;
-                height: 1.3125rem;
-                @include btn-menu-mobile;
-    
-                @media screen and (min-width: $breakpoint-lg) {
-                    display: none;
-                }
-            }
-        }
-    }
-}
-
 .header-menu-itens{
-    padding: 0.75rem;
     display: flex;
-    justify-content: center;
-
+    align-items: center;
+    position: relative;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    
     @media screen and (min-width: $breakpoint-lg) {
-        align-items: center;
+        justify-content: center;
         column-gap: 1.5rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 
     @media screen and (min-width: $breakpoint-xl) {
@@ -101,42 +20,26 @@
     }
 
     .logo{
-        width: 11.25rem;
-        height: auto;
-        object-fit: cover;
-        @include mx-auto;
-        
-        @media screen and (min-width: $breakpoint-lg) {
-            width: 10rem;
-        }
-        @media screen and (min-width: $breakpoint-xl) {
-            width: 16rem;
-        }
+        @include heading-title-xl;
+        color: $white;
     }
 
     .menu-items{
         position: fixed;
-        background-color: $white;
         top: 0;
         left: 0;
         height: 100%;
         width: 100%;
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
-        padding: 1.5rem;
         z-index: 30;
         display: none;
         font-weight: bold;
         text-transform: uppercase;
         @include font-rubik;
-      
 
         @media screen and (min-width: $breakpoint-lg) {
-            padding: 0;
             position: relative;
             display: flex;
             justify-content: center;
-            margin-top: 1rem;
             row-gap: 1.25rem;
         }
         
@@ -173,96 +76,27 @@
                 }
 
                 li a {
-                    color: $blue;
+                    color: $white;
                     text-decoration: none;
+                    @include heading-title-lg;
                 
                     &:hover {
-                        color: $blue-dark;
+                        color: $gray-medium;
                     }
                     @include transition-colors;
-                }
-                li.father-item a:first-child{
-
-                    &:hover{
-                        color: $blue-dark;
-                    }
-                }
-
-                li.father-item{
-                    @media screen and (min-width: $breakpoint-lg) {
-                        font-size: 0.9375rem;
-                    }
-                    
-                    @media screen and (min-width: $breakpoint-1_5xl) {
-                        font-size: 16px;
-                    }
-
-                    &:hover{
-                        &::after{
-                            content: '';
-                            position: absolute;
-                            top: 0.9375rem;
-                            left: 0;
-                            height: 6.875rem;
-                            width: 100%;
-                        }
-                        
-                        ul.sub-menu-0{
-                            display: flex;
-                            row-gap: 5rem;
-                            background-color: $white;
-                            position: absolute;
-                            top: 20px;
-                            width: auto;
-                            height: auto;
-                            padding-left: 0;
-                            padding: 20px;
-                            z-index: 10;
-                            flex-direction: column;
-
-                            @media screen and (min-width: $breakpoint-lg) {
-                                column-gap: 5rem;
-                                row-gap: 0;
-                            }
-                            
-                            a{
-                                margin-bottom: 0.625rem;
-                                display: block;
-                            }
-
-                        
-                        }
-                        ul.sub-menu-1{
-                            display: block;
-                            a{
-                                font-weight: normal;
-                                text-transform: none;
-                            }
-                        }
-                    }
-                }
-
-                ul.sub-menu {
-                    padding-left: 1.25rem;
-
-                    li a{
-                        text-transform: none;
-                    }
-
-                    @media screen and (min-width: $breakpoint-lg) {
-                        display: none;
-                    }
-                }
-
-
-                .child-item{
-                    margin-top: 10px;
                 }
             }
         }
 
+        &.openned{
+            background-color: $blue-ultradark;
+            padding: 1.25rem;
+            display: flex
+        }
+        
         .bg-close-menu-mobile{
-           @include btn-menu-mobile;
+            @include btn-menu-mobile;
+            
            position: absolute;
             top: 1.75rem;
             right: 1rem;
@@ -275,5 +109,22 @@
             }
         }        
 
+    }
+    .open-menu-mobile{
+                
+        .bg-menu-mobile{         
+            position: absolute;
+            top: 1.25rem;
+            right: 1rem;
+            background: url("../../library/icons/menu-icon.svg");
+            transform: translateY(1.5rem);
+            width: 2.0625rem;
+            height: 1.3125rem;
+            @include btn-menu-mobile;
+
+            @media screen and (min-width: $breakpoint-lg) {
+                display: none;
+            }
+        }
     }
 }

@@ -80,11 +80,11 @@
   }
 }
 
-@mixin heading-title-xl {//20px e 35px
+@mixin heading-title-xl {//20px e 40px
   @include heading-titles;
   @include text-xl;
   @media screen and (min-width: $breakpoint-lg) {
-    font-size: 2.1875rem;
+    font-size: 40px;
   }
 }
 

@@ -1,14 +1,14 @@
 /*
-Theme Name: CVidaSegura
+Theme Name: Portfolio
 Theme URI: 
-Author: Vinícius david marques e Christiane Barros
+Author: Vinícius david marques
 Author URI: 
-Description: Theme dedicated to a health and life insurance website
-Tags: accessibility-ready, one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
-Version: 2.0
+Description: Theme dedicated to showing all my website works
+Tags: accessibility-ready, one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments
+Version: 1.0
 Requires PHP: 7.0
 
-CVidaSegura WordPress Theme 2024
+Portfolio WordPress Theme 2024
 */
 
 @import url('src/css/style.css');

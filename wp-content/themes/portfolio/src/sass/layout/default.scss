@@ -89,19 +89,15 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   line-height: 1;
 }
-a {
-  text-decoration-skip-ink: auto;
-}
-a[href^="tel"] {
-  color: inherit;
-  text-decoration: none;
-}
+
 button {
   outline: 0;
 }
@@ -176,10 +172,22 @@ body {
   font-size: 1rem; /* 16px */
   line-height: 1.25rem;
   overflow-x: hidden;
+  background-color: $blue-ultradark;
+  color: $white;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+}
+
+a[href^="tel"] {
+  color: inherit;
+  text-decoration: none;
 }
 
 [aria-current]:not([aria-current="false"]) {
-  color: $blue-dark !important;
+  color: $gray-medium !important;
 }
 
 .container {
@@ -299,19 +307,15 @@ img {
   object-fit: cover;
 }
 
-.blue{
-  color: $blue;
-}
-
-.blue-dark{
+.blue-dark {
   color: $blue-dark;
 }
 
-.uppercase{
+.uppercase {
   text-transform: uppercase;
 }
 
-.mt-20{
+.mt-20 {
   margin-top: 5rem;
 }
 
@@ -333,109 +337,36 @@ img {
   }
 }
 
-.bg-blue-hard-light {
-  background-color: $blue-medium;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.8;
-  mix-blend-mode: hard-light;
-  z-index: 10;
-}
-
-.breadcrumb{
-  display: none;
-} 
-
-.facilities {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-
-  @media screen and (min-width: $breakpoint-lg) {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
-  .title {
-    @include col-span-12;
-    @include heading-title-xl;
-    color: $blue;
-    text-align: center;
-    margin-bottom: 2.5rem;
-
-    @media screen and (min-width: $breakpoint-lg) {
-      margin-bottom: 5rem;
-    }
-
-    p{
-      @include heading-text-md;
-      text-transform: none;
-    }
-
-    .main-title{
-      margin-bottom: 2.5rem;
-      color: $blue-dark;
-    }
-  }
-
-  ul {
-    @include col-span-12;
-    display: flex;
-    flex-direction: column;
-    row-gap: 2.5rem;
-
-    @media screen and (min-width: $breakpoint-lg) {
-      row-gap: 0;
-      column-gap: 2.5rem;
-      flex-direction: row;
-      @include mx-auto;
-    }
-
-    .list {
-      display: flex;
-      flex-direction: row;
-      @include heading-title-lg;
-      text-transform: none;
-      color: $blue;
-      position: relative;
-      padding-left: 3.75rem;
-
-      &:before {
-        content: "";
-        background-image: url("../../library/icons/check.svg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 2.5rem;
-        height: 2.5rem;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-    }
-  }
-}
-
-.button-primary{
+.button {
+  @include transition-colors;
   width: fit-content;
-  height: fit-content;
-  @include heading-text-sm;
-  text-transform: uppercase;
+  padding: 12px;
   text-decoration: none;
-  background-color: $blue;
-  color: $white;
-  padding: 1.25rem;
-  font-weight: bold;
-
-  &:hover{
-    background-color: $blue-dark;
-    @include transition-colors;
+  @include heading-title-sm;
+  @media screen and (min-width: $breakpoint-lg) {
+    @include heading-title-md;
   }
 }
 
-.post-not-found{
+.button-green {
+  background-color: $green;
+  color: $white;
+
+  &:hover {
+    background-color: $green-dark;
+  }
+}
+
+.button-default {
+  background-color: $gray-light;
+  color: $gray-ultradark;
+
+  &:hover {
+    background-color: $gray-medium;
+  }
+}
+
+.post-not-found {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -445,7 +376,7 @@ img {
   padding-top: 5rem;
   padding-bottom: 5rem;
 
-  .entry-title{
+  .entry-title {
     @include heading-title-lg;
     color: $blue-dark;
   }
