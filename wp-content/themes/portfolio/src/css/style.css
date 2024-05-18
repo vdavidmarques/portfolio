@@ -142,10 +142,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  line-height: 1;
-}
-
 button {
   outline: 0;
 }
@@ -225,12 +221,12 @@ section {
 }
 
 body {
-  font-family: "MontSerrat", sans-serif;
-  font-size: 1rem; /* 16px */
-  line-height: 1.25rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  line-height: 1.875rem;
   overflow-x: hidden;
   background-color: #06141B;
-  color: #fff;
+  color: #CCD0CF;
 }
 
 a {
@@ -421,7 +417,7 @@ img {
     font-weight: bold;
     font-family: "Rubik", sans-serif;
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.875rem;
   }
 }
 
@@ -456,7 +452,7 @@ img {
   font-weight: bold;
   font-family: "Rubik", sans-serif;
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.875rem;
   color: #11212D;
 }
 @media screen and (min-width: 1024px) {
@@ -572,7 +568,7 @@ img {
   font-weight: bold;
   font-family: "Rubik", sans-serif;
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.875rem;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -683,7 +679,7 @@ footer .wpp-float {
   position: fixed;
   z-index: 50;
   animation: bounce 1s infinite;
-  bottom: 8.375rem;
+  bottom: 100px;
   right: 1.25rem;
 }
 @keyframes bounce {
@@ -714,7 +710,7 @@ footer .scroll-to-top-btn {
   background-size: cover !important;
   background-repeat: no-repeat !important;
   position: fixed;
-  bottom: 4.875rem;
+  bottom: 2.5rem;
   right: 1.875rem;
   background: url("../../library/icons/up-arrow.svg");
   width: 1.875rem;
@@ -800,6 +796,119 @@ footer .scroll-to-top-btn {
   .banners .default-heading-title h1 {
     font-size: 3.4375rem;
     text-indent: -1px;
+  }
+}
+
+.about {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background-color: #11212D;
+}
+@media screen and (min-width: 1024px) {
+  .about {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+.about .content {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+.about .content .me {
+  grid-column: span 12/span 12;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  row-gap: 1.25rem;
+}
+@media screen and (min-width: 1024px) {
+  .about .content .me {
+    column-gap: 0.625rem;
+    row-gap: 0;
+  }
+}
+.about .content .me .pic {
+  position: relative;
+  height: 28.125rem;
+  grid-column: span 12/span 12;
+}
+@media screen and (min-width: 1024px) {
+  .about .content .me .pic {
+    grid-column: span 4/span 4;
+  }
+}
+.about .content .me .heading-title {
+  text-align: center;
+  grid-column: span 12/span 12;
+}
+@media screen and (min-width: 1024px) {
+  .about .content .me .heading-title {
+    grid-column: span 6/span 6;
+    grid-column-start: 6;
+  }
+}
+.about .content .me .heading-title h1, .about .content .me .heading-title h2, .about .content .me .heading-title h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+@media screen and (min-width: 1024px) {
+  .about .content .me .heading-title h1, .about .content .me .heading-title h2, .about .content .me .heading-title h3 {
+    font-size: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about .content .me .heading-title h1, .about .content .me .heading-title h2, .about .content .me .heading-title h3 {
+    margin-bottom: 2.5rem;
+  }
+}
+.about .content .me .heading-title p {
+  text-align: left;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.875rem;
+}
+.about .content .strong-points {
+  grid-column: span 12/span 12;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 5rem;
+  row-gap: 2.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .about .content .strong-points {
+    row-gap: 5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.about .content .strong-points .card {
+  text-align: center;
+}
+.about .content .strong-points .card img.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  margin-bottom: 0.625rem;
+}
+@media screen and (min-width: 1024px) {
+  .about .content .strong-points .card img.icon {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+}
+.about .content .strong-points .card p {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  max-width: 9.375rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 1024px) {
+  .about .content .strong-points .card p {
+    max-width: 21.875rem;
   }
 }
 

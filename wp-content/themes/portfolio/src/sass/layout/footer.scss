@@ -53,7 +53,7 @@ footer{
         position: fixed;
         z-index: 50;
         @include anime-bounce;
-        bottom: 8.375rem;
+        bottom: 100px;
         right: 1.25rem;
         
         @media screen and (min-width: $breakpoint-lg) {
@@ -74,7 +74,7 @@ footer{
         background-size: cover !important;
         background-repeat: no-repeat !important;
         position: fixed;
-        bottom: 4.875rem;
+        bottom: 2.5rem;
         right: 1.875rem;
         background: url("../../library/icons/up-arrow.svg");
         width: 1.875rem;

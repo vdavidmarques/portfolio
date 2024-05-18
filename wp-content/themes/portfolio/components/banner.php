@@ -1,4 +1,4 @@
-<article class="main-banner banners py-20">
+<section class="main-banner banners py-20">
     <div class="swiper-container relative overflow-hidden">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -38,8 +38,8 @@
                             <?php endif; ?>
                         </div>
                         <?php
-                            $count = count($firstBanners);
-                            if ($count > 1) :
+                        $count = count($firstBanners);
+                        if ($count > 1) :
                         ?>
                             <div class="swiper-button-prev arrow-swiper arrow-swiper-prev"></div>
                             <div class="swiper-button-next arrow-swiper arrow-swiper-next"></div>
@@ -47,6 +47,6 @@
                 <?php endforeach;
                 endif; ?>
             </div>
-
         </div>
-</article>
+    </div>
+</section>
