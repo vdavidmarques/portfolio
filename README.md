@@ -1,4 +1,4 @@
-# Portfolio - Template
+# Baixada Web Studio - Template
 
 ## Overview
 
@@ -21,7 +21,7 @@ Install all [Wordpress](https://br.wordpress.org/) presets normally
 
 ### SASS
 
-To run SASS, navigate to the `wp-content/themes/portfolio` directory and execute the following command after installing Node.js:
+To run SASS, navigate to the `wp-content/themes/baixada-web-studio` directory and execute the following command after installing Node.js:
 
 ```bash
 npm run starttailwind
