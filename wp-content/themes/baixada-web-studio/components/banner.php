@@ -1,52 +1,62 @@
 <section class="main-banner banners py-20">
     <div class="swiper-container relative overflow-hidden">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <?php
-                $firstBanners = get_field("banner");
-                $count = 0;
-                if ($firstBanners) :
-                    foreach ($firstBanners as $firstBanner) :
-                        if ($firstBanner["main-banner-image"] || $firstBanner["main-banner-image-mobile"]) :
-                ?>
+            <?php
+            $id = $environment;
+            $banners = get_field("banner", $id);
+            $count = 0;
+            if ($banners) :
+                foreach ($banners as $banner) :
+                    if ($banner["main-banner-image"] || $banner["main-banner-image-mobile"]) :
+            ?>
+                    <div class="swiper-slide">
                             <div class="bg-blue-hard-light pointer-events-none">&nbsp;</div>
-                            <img src="<?php echo $firstBanner["main-banner-image"] ?>" alt="Desenvolvedor web - Vinícius Marques" itemprop="image" class="w-full h-full object-cover show-desktop">
+                            <img src="<?php echo $banner["main-banner-image"]['url'] ?>" alt="Baixada Web Studio" itemprop="image" class="w-full h-full object-cover show-desktop">
 
-                            <?php if ($firstBanner["main-banner-image-mobile"]) : ?>
-                                <img src="<?php echo $firstBanner["main-banner-image-mobile"] ?>" alt="<?php echo $firstBanner["main-banner-image-mobile"]['alt'] ?>" itemprop="image" class="w-full h-full object-cover show-mobile">
+                            <?php if ($banner["main-banner-image-mobile"]) : ?>
+                                <img src="<?php echo $banner["main-banner-image-mobile"]['url'] ?>" alt="<?php echo $banner["main-banner-image-mobile"]['alt'] ?>" itemprop="image" class="w-full h-full object-cover show-mobile">
 
                             <?php else : ?>
 
-                                <img src="<?php echo $firstBanner["main-banner-image"] ?>" alt="Desenvolvedor web - Vinícius Marques" itemprop="image" class="w-full h-full object-cover show-mobile">
+                                <img src="<?php echo $banner["main-banner-image"] ?>" alt="Baixada Web Studio" itemprop="image" class="w-full h-full object-cover show-mobile">
 
                             <?php endif; ?>
 
-                        <?php endif; ?>
+                    <?php endif; ?>
 
-                        <div class="container default-heading-title flex flex-col h-full">
-                            <?php
-                            if ($firstBanner["main-banner-main-text"]) :
-                                echo  $firstBanner["main-banner-main-text"];
-                            endif;
+                        <div class="default-heading-title flex flex-col h-full">
+                    <?php
+                        if ($banner["main-banner-main-text"]) :
+                            echo  $banner["main-banner-main-text"];
+                        endif;
 
-                            if ($firstBanner['main-banner-button']) : ?>
+                        $args = array(
+                            'name' => 'informacoes-gerais',
+                            'post_type' => 'page',
+                        );
 
-                                <a href="<?php echo $firstBanner['main-banner-button']['url'] ?>" itemprop="name" class="mt-6 button button-default">
-                                    <?php echo $firstBanner['main-banner-button']['title'] ?>
-                                </a>
-
-                            <?php endif; ?>
+                        $query = new WP_Query($args);
+                        while ($query->have_posts()) :
+                            $query->the_post();
+                            $whatsapp = get_field('whatsapp');
+                            $whatsappNumber = get_field('whatsappNumber');
+                            $whatsappMessage = get_field('whatsappMessage');
+                    ?>
+                            <a target="_blank" href="https://api.whatsapp.com/send?phone=<?php echo $whatsappNumber ?>&text=<?php echo $whatsappMessage ?>" class="button button-default">
+                               demonstração gratuita
+                            </a>
+                        <?php endwhile; ?>
                         </div>
                         <?php
-                        $count = count($firstBanners);
-                        if ($count > 1) :
+                            $count = count($banners);
+                            if ($count > 1) :
                         ?>
                             <div class="swiper-button-prev arrow-swiper arrow-swiper-prev"></div>
                             <div class="swiper-button-next arrow-swiper arrow-swiper-next"></div>
                         <?php endif; ?>
+                    </div>
                 <?php endforeach;
-                endif; ?>
-            </div>
+            endif; ?>
         </div>
     </div>
 </section>

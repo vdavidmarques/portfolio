@@ -4,6 +4,10 @@
 .banners{
     
     .default-heading-title {
+        @media screen and (min-width: $breakpoint-lg) {
+            max-width: 49.75rem;
+        }
+
         h1, h2{
             text-transform: uppercase;
         }

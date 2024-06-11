@@ -437,7 +437,7 @@ img {
 
 .button-default {
   background-color: #fff;
-  color: #253745;
+  color: #0b3453;
 }
 .button-default:hover {
   background-color: #9BABAB;
@@ -766,12 +766,16 @@ footer .scroll-to-top-btn {
   color: #fff;
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 2.5rem;
   z-index: 10;
   justify-content: center;
 }
 
+@media screen and (min-width: 1024px) {
+  .banners .default-heading-title {
+    max-width: 49.75rem;
+  }
+}
 .banners .default-heading-title h1, .banners .default-heading-title h2 {
   text-transform: uppercase;
 }
@@ -787,6 +791,7 @@ footer .scroll-to-top-btn {
   .banners .default-heading-title h1 {
     font-size: 3.4375rem;
     text-indent: -1px;
+    line-height: 3.5rem;
   }
 }
 

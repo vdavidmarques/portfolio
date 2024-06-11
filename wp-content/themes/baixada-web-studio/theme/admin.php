@@ -14,6 +14,7 @@
 
         /*******************************
         Adding the Options Page in Admin Menu
+        Should change PAGE ID  to the new one (post.php?post=8)
         ********************************/
 
         add_action('admin_menu', 'linked_url');
