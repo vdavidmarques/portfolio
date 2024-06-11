@@ -1,0 +1,77 @@
+@import '../helpers/variables.scss';
+@import '../helpers/mixins.scss';
+
+footer{
+    padding-bottom: 1.25rem;
+
+    .after-footer{
+        font-size: 0.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        
+        @media screen and (min-width: $breakpoint-lg) {
+            flex-direction: row;
+        }
+    }
+
+    .social-networks{
+        @include col-span-12;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 1.25rem;
+        margin: 2.5rem 0;
+        
+        @media screen and (min-width: $breakpoint-lg) {
+            @include col-span-1;
+        }
+
+        img{
+            width: 2.5rem;
+            height: 2.5rem;
+            object-fit: cover;
+        }
+    }
+
+    .wpp-float{
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: contain;
+        position: fixed;
+        z-index: 50;
+        @include anime-bounce;
+        bottom: 100px;
+        right: 1.25rem;
+        
+        @media screen and (min-width: $breakpoint-lg) {
+            right: 2.5rem;
+            bottom: 9.375rem;
+        }
+    }
+
+    .scroll-to-top-btn{
+        background-position: center;
+        cursor: pointer;
+        overflow: hidden;
+        padding-left: 1.5rem;
+        text-indent: -624.9375rem;
+        border: none;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        position: fixed;
+        bottom: 2.5rem;
+        right: 1.875rem;
+        background: url("../../library/icons/up-arrow.svg");
+        width: 1.875rem;
+        height: 1.875rem;
+        object-fit: contain;
+        
+        @media screen and (min-width: $breakpoint-lg) {
+            right: 2.5rem;
+            bottom: 5rem;
+        }
+    }
+}

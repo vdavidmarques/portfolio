@@ -1,0 +1,126 @@
+@import '../helpers/variables.scss';
+@import '../helpers/mixins.scss';
+
+.header-menu-itens{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    
+    @media screen and (min-width: $breakpoint-lg) {
+        column-gap: 1.5rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    @media screen and (min-width: $breakpoint-xl) {
+        column-gap: 3.5rem;
+    }
+
+    .logo{
+        @include heading-title-xl;
+    }
+
+    .menu-items{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 30;
+        display: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        @include font-rubik;
+
+        @media screen and (min-width: $breakpoint-lg) {
+            position: relative;
+            display: flex;
+            justify-content: end;
+            row-gap: 1.25rem;
+        }
+        
+        nav#custom-header-menu{
+            overflow-y: scroll;
+            padding-bottom: 3.75rem;
+            width: 100%;
+            
+            @media screen and (min-width: $breakpoint-lg) {
+                overflow-y: inherit;
+                padding-bottom: 0;
+                width: auto;
+            }
+
+            ul#custom-header-menu{
+                display: flex;
+                flex-direction: column;
+                row-gap: 1.25rem;
+                margin-top: 3.125rem;
+
+                @media screen and (min-width: $breakpoint-lg) {
+                    flex-direction: row;
+                    row-gap: 0;
+                    column-gap: 1rem;
+                    margin-top: 0;
+                }
+
+                @media screen and (min-width: $breakpoint-1_5xl) {
+                    column-gap: 1.5rem;
+                }
+
+                @media screen and (min-width: $breakpoint-2xl) {
+                    column-gap: 4rem;
+                }
+
+                li a {
+                    text-decoration: none;
+                    @include heading-title-lg;
+                    
+                    @media screen and (max-width: $breakpoint-xlg) {
+                        color: $gray-light;
+                    }
+                }
+            }
+        }
+
+        &.openned{
+            background-color: $blue-ultradark;
+            padding: 1.25rem;
+            display: flex
+        }
+        
+        .bg-close-menu-mobile{
+            @include btn-menu-mobile;
+            
+           position: absolute;
+            top: 1.75rem;
+            right: 1rem;
+            width: 2.25rem;
+            height: 2.25rem;
+            background: url("../../library/icons/close-menu-icon.svg");
+            
+            @media screen and (min-width: $breakpoint-lg) {
+                display: none;
+            }
+        }        
+
+    }
+    .open-menu-mobile{
+                
+        .bg-menu-mobile{         
+            position: absolute;
+            top: 1.25rem;
+            right: 1rem;
+            background: url("../../library/icons/menu-icon.svg");
+            transform: translateY(1.5rem);
+            width: 2.0625rem;
+            height: 1.3125rem;
+            @include btn-menu-mobile;
+
+            @media screen and (min-width: $breakpoint-lg) {
+                display: none;
+            }
+        }
+    }
+}

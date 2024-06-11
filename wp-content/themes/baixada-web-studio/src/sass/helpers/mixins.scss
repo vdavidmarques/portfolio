@@ -1,0 +1,228 @@
+@import "./variables.scss";
+
+@mixin font-rubik {
+  font-family: "Rubik", sans-serif;
+}
+
+@mixin mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin text-xs {//12px
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+@mixin text-sm {//14px
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+@mixin text-base {//16px
+  font-size: 1rem;
+  line-height: 1.875rem;
+}
+
+@mixin text-lg {//18px
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+@mixin text-xl {//20px
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@mixin text-4xl {//36px
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+@mixin heading-text-sm {
+  @include text-sm;
+}
+
+@mixin heading-text-md {
+  @include text-base;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    @include text-lg;
+  }
+}
+
+@mixin heading-titles {
+  text-transform: uppercase;
+  font-weight: bold;
+  @include font-rubik;
+}
+
+@mixin heading-title-sm {//14px
+  @include text-sm;
+  @include heading-titles;
+}
+
+@mixin heading-title-md {//16px
+  @include heading-titles;
+  @include text-base;
+}
+
+@mixin heading-title-lg {//16px e 20px
+  @include heading-titles;
+  @include text-base;
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: 1.25rem;
+  }
+}
+
+@mixin heading-title-xl {//20px e 40px
+  @include heading-titles;
+  @include text-xl;
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: 40px;
+  }
+}
+
+@mixin heading-title-2xl {//36px e 55px
+  @include heading-titles;
+  @include text-4xl;
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: 3.4375rem;
+    text-indent: -1px;
+  }
+}
+
+@mixin transition-colors {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@mixin transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@mixin btn-menu-mobile {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  padding-left: 1.5rem;
+  text-indent: -624.9375rem;
+  border: none;
+}
+
+@mixin w-full {
+  width: 100%;
+}
+
+@mixin h-full {
+  width: 100%;
+}
+
+@mixin grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@mixin grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+@mixin col-span-1 {
+  grid-column: span 1 / span 1;
+}
+@mixin col-span-2 {
+  grid-column: span 2 / span 2;
+}
+@mixin col-span-3 {
+  grid-column: span 3 / span 3;
+}
+@mixin col-span-4 {
+  grid-column: span 4 / span 4;
+}
+@mixin col-span-5 {
+  grid-column: span 5 / span 5;
+}
+@mixin col-span-6 {
+  grid-column: span 6 / span 6;
+}
+@mixin col-span-7 {
+  grid-column: span 7 / span 7;
+}
+@mixin col-span-8 {
+  grid-column: span 8 / span 8;
+}
+@mixin col-span-9 {
+  grid-column: span 9 / span 9;
+}
+@mixin col-span-10 {
+  grid-column: span 10 / span 10;
+}
+@mixin col-span-11 {
+  grid-column: span 11 / span 11;
+}
+@mixin col-span-12 {
+  grid-column: span 12 / span 12;
+}
+@mixin col-start-inherit {
+  grid-column-start: inherit;
+}
+@mixin col-start-1 {
+  grid-column-start: 1;
+}
+@mixin col-start-2 {
+  grid-column-start: 2;
+}
+@mixin col-start-3 {
+  grid-column-start: 3;
+}
+@mixin col-start-4 {
+  grid-column-start: 4;
+}
+@mixin col-start-5 {
+  grid-column-start: 5;
+}
+@mixin col-start-6 {
+  grid-column-start: 6;
+}
+@mixin col-start-7 {
+  grid-column-start: 7;
+}
+@mixin col-start-8 {
+  grid-column-start: 8;
+}
+@mixin col-start-9 {
+  grid-column-start: 9;
+}
+@mixin col-start-10 {
+  grid-column-start: 10;
+}
+@mixin col-start-11 {
+  grid-column-start: 11;
+}
+@mixin col-start-12 {
+  grid-column-start: 12;
+}
+
+@mixin mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@mixin anime-bounce{
+  animation: bounce 1s infinite;
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+}
