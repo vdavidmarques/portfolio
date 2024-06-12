@@ -18,7 +18,6 @@
     }
 
     $environment = checkEnvironment();
-    $id = $environment;
     
     get_header();
 ?>
@@ -27,8 +26,9 @@
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <div class="page home">
             <?php include 'components/banner.php'; ?>
-            <?php /*include 'components/about.php';*/ ?>
-            <?php /*include 'components/works.php';*/ ?>
+            <?php include 'components/about.php'; ?>
+            <?php include 'components/benefits.php'; ?>
+            <?php include 'components/offer.php'; ?>
             </div>
             <?php endwhile;
         endif; ?>

@@ -1,0 +1,68 @@
+@import '../../helpers/variables.scss';
+@import '../../helpers/mixins.scss';
+
+.benefits{
+    padding-bottom: 5rem;
+    display: grid;
+    @include grid-cols-12;
+
+    @media screen and (min-width: $breakpoint-lg) {
+        padding-bottom: 9.375rem;
+    }
+
+    .title{
+        @include col-span-8;
+        @include col-start-3;
+        @include heading-title-2xl;
+        text-align: center;
+        margin-bottom: 5rem;
+
+        @media screen and (min-width: $breakpoint-lg) {
+            margin-bottom: 9.375rem;
+        }
+    }
+
+    .lists{
+        @include col-span-12;
+        display: grid;
+        @include grid-cols-1;
+        row-gap: 2.5rem;
+        justify-content: center;
+        
+        @media screen and (min-width: $breakpoint-lg) {
+            column-gap: 2.5rem;
+            @include grid-cols-3;
+            row-gap: 0;
+        }
+
+        .list{
+            text-align: center;
+
+            .icon{
+                background-color: $blue-dark;;
+                width: 7.6875rem;
+                height: 7.6875rem;
+                border-radius: 9999px;
+                margin-bottom: 1.875rem;
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img{
+                    width: 4.375rem;
+                    height: 4.375rem;
+                    object-fit: contain;
+                }
+            }
+
+            h1, h2,h3,h4{
+                @include heading-title-lg;
+                color: $blue-dark;
+                margin-bottom: 1.25rem;
+            }
+        }
+
+    }
+}

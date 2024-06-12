@@ -1,106 +1,102 @@
+@import '../../helpers/variables.scss';
+@import '../../helpers/mixins.scss';
+
 .about{
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    
-    background-color: $blue-dark;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 
     @media screen and (min-width: $breakpoint-lg) {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
+        padding-top: 9.375rem;
+        padding-bottom: 9.375rem;
     }
+
+    .relative{
+        position: relative;
+    }
+
+    .bg-image {
+        grid-column: span 12 / span 12;
+        position: relative;
+        height: 25rem;
+
+        @media screen and (min-width: $breakpoint-lg) {
+           @include col-span-6;
+           height: 40rem;
+
+        }
+
+        img{
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            height: 25rem;
+
+            @media screen and (min-width: $breakpoint-lg) {
+                height: 40rem;
+            }
+        }
+    } 
+
+    .bg-image img, .content{
+        @media screen and (min-width: $breakpoint-sm) {
+            height: 31.25rem;
+        }
+
+        @media screen and (min-width: $breakpoint-lg) {
+            height: 40rem;
+        }
+    } 
+
+    .blue-bg{
+        background-color: $blue-dark;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .default-heading-title{
+        text-align: center;
+        @include heading-title-2xl;
+        margin-bottom: 9.375rem;
+        
+    } 
 
     .content{
-        display: grid;
-        @include grid-cols-12;
+        @include col-span-12;
+        background-color: $blue-dark;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        z-index: 20;
+        row-gap: 2.5rem;
+        padding: 5rem 1rem;
 
-        .me{
-            @include col-span-12;
-            display: grid;
-            align-items: center;
-            grid-template-columns: repeat(12, minmax(0, 1fr));
-            row-gap: 1.25rem;
-            
-            @media screen and (min-width: $breakpoint-lg) {
-                column-gap: 0.625rem;
-                row-gap: 0;
-            }
-            
-            .pic{
-                position: relative;
-                height: 28.125rem;
-                @include col-span-12;
-                
-                @media screen and (min-width: $breakpoint-lg) {
-                    @include col-span-4;
-                }
-            }
-    
-            .heading-title{
-                text-align: center;
-                @include col-span-12;
-                
-                @media screen and (min-width: $breakpoint-lg) {
-                    @include col-span-6;
-                    @include col-start-6;
-                }
-    
-                h1, h2, h3{
-                    @include heading-title-xl;
-                    margin-bottom: 1.25rem;   
-    
-                    @media screen and (min-width: $breakpoint-lg) {
-                        margin-bottom: 2.5rem;
-                    }
-                }
-    
-                p{
-                    text-align: left;
-                    margin-bottom: 1.25rem;
-                    @include text-base;
-                }
-            }
+        @media screen and (min-width: $breakpoint-lg) {
+            @include col-span-5;
+            @include col-start-7;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: baseline;
+            padding-left: 2.5rem;
         }
-    
-        .strong-points{
-            @include col-span-12;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            margin-top: 5rem;
-            row-gap: 2.5rem;
-            
-            @media screen and (min-width: $breakpoint-lg) {
-                row-gap: 5rem;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
 
-            .card{
-                text-align: center;
+        @media screen and (min-width: $breakpoint-1_5xl) {
+            @include col-span-4;
+            @include col-start-8;
+        }
+        
+        p{
+            line-height: 1.875rem;
+        }    
 
-                img.icon{
-                    width: 2.5rem;
-                    height: 2.5rem;
-                    object-fit: contain;
-                    margin-bottom: 0.625rem;
-    
-                    @media screen and (min-width: $breakpoint-lg) {
-                        width: 3.75rem;
-                        height: 3.75rem;
-                    }
-                }
-
-                p{
-                    @include font-rubik;
-                    font-weight: 600;
-                    max-width: 9.375rem;
-                    margin-left: auto;
-                    margin-right: auto;
-
-                    @media screen and (min-width: $breakpoint-lg) {
-                        max-width: 21.875rem;
-                    }  
-                }
-            }
+        .button-first{
+            display: block;
         }
     }
-
 }
