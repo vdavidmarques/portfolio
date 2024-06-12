@@ -25,7 +25,7 @@
                     Menu
                 </button>
             </div>
-            <div class="menu-items">
+            <div class="menu-items scroll-effect">
                 <?php custom_header_menu(); ?>
 
                 <button onclick="closeMenu()" class="bg-close-menu-mobile">

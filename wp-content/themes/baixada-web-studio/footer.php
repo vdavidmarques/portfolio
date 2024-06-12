@@ -19,16 +19,16 @@
                     $github = get_field('github');
                     $behance = get_field('behance');
                 ?>
-                    <a target="_blank" href="<?php echo $email ?>">
+                    <a target="_blank" href="<?php echo $email ?>" class="scroll-effect">
                         <img src="<?php echo  get_template_directory_uri() . '/library/icons/email.svg' ?>" alt="" itemprop="image">
                     </a>
-                    <a target="_blank" href="<?php echo $instagram ?>">
+                    <a target="_blank" href="<?php echo $instagram ?>" class="scroll-effect">
                         <img src="<?php echo  get_template_directory_uri() . '/library/icons/instagram.svg' ?>" alt="" itemprop="image">
                     </a>
-                    <a target="_blank" href="<?php echo $github ?>">
+                    <a target="_blank" href="<?php echo $github ?>" class="scroll-effect">
                         <img src="<?php echo  get_template_directory_uri() . '/library/icons/github.svg' ?>" alt="" itemprop="image">
                     </a>
-                    <a target="_blank" href="<?php echo $behance ?>">
+                    <a target="_blank" href="<?php echo $behance ?>" class="scroll-effect">
                         <img src="<?php echo  get_template_directory_uri() . '/library/icons/behance.svg' ?>" alt="" itemprop="image">
                     </a>
             </div>
